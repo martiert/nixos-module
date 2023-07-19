@@ -9,8 +9,6 @@
     "steam-original"
     "steam-runtime"
     "webex"
-    "teamctl"
-    "roomctl"
     "nvidia-x11"
     "nvidia-settings"
     "nvidia-persistenced"

@@ -29,17 +29,13 @@
 
       #tools
       wget
-      generate_ssh_key
+      (pkgs.callPackage ./generate_ssh_key {})
 
       egl-wayland
       pulsemixer
 
       cura
       git-crypt
-
-      vysor
-      teamctl
-      roomctl
 
       tmate
     ];
