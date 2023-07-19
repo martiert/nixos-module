@@ -5,7 +5,9 @@ let
   enabled_interfaces = lib.filterAttrs (_: value: value.enable) interfaces;
 
   supplicantConfig = iface: values: {
-    configFile.path = config.age.secrets."wpa_supplicant_${iface}".path;
+    configFile = {
+      path = config.martiert.networking.interfaces."${iface}".supplicant.configFile;
+    };
     userControlled.enable = !values.supplicant.wired;
     extraConf = if values.supplicant.wired then "" else ''
       ap_scan=1

@@ -24,6 +24,11 @@ with lib;
                 options = {
                   enable = mkEnableOption "wpa_supplicant for this interface";
                   wired = mkEnableOption "wired supplicant config";
+                  configFile = mkOption {
+                    type = types.nullOr types.path;
+                    default = null;
+                    description = "config file for wpa_supplicant";
+                  };
                 };
               };
             };
