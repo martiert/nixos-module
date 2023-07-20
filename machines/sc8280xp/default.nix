@@ -36,6 +36,7 @@ in {
       firmware = [
         firmware.linux-firmware-modified
       ];
+      bluetooth.enable = true;
     };
 
     environment.systemPackages = [

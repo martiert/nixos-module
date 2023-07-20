@@ -30,5 +30,19 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
       };
       wantedBy = ["multi-user.target"];
     };
+    btSetup = {
+      serviceConfig = {
+        ExecStart = pkgs.writeShellScript "setupBluetooth" ''
+          ${pkgs.util-linux}/bin/rfkill block bluetooth
+          ${pkgs.bluez5-experimental}/bin/btmgmt public-addr D4:C2:0D:30:A2:44
+          ${pkgs.util-linux}/bin/rfkill unblock bluetooth
+        '';
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+      before = [
+        "bluetooth.service"
+      ];
+    };
   };
 }
