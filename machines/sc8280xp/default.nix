@@ -38,6 +38,10 @@ in {
       ];
     };
 
+    environment.systemPackages = [
+      pkgs.alsa-ucm-conf
+    ];
+
     martiert = {
       boot = {
         initrd = {
