@@ -11,6 +11,8 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
     ];
   };
 
+  services.upower.enable = true;
+
   systemd.services = {
     pd-mapper = {
       unitConfig = {
@@ -22,6 +24,7 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
         Restart = "always";
       };
       wantedBy = ["multi-user.target"];
+      before = ["upower.service"];
     };
     qrtr = {
       serviceConfig = {
