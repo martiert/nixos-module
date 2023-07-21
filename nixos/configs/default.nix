@@ -14,17 +14,23 @@ in {
     ./networking
   ];
 
-  config = {
-    sound.enable = isPersonalPC;
-    hardware.pulseaudio = mkIf isPersonalPC {
+  config = mkIf isPersonalPC {
+    sound.enable = true;
+    security.rtkit.enable = true;
+    services.pipewire = {
       enable = true;
-      extraConfig = ''unload-module module-switch-on-port-available'';
-      support32Bit = (pkgs.system == "x86_64-linux");
+      pulse.enable = true;
+      jack.enable = true;
+      wireplumber.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
     };
 
-    documentation.dev.enable = isPersonalPC;
+    documentation.dev.enable = true;
 
-    environment.systemPackages = mkIf isPersonalPC [
+    environment.systemPackages = [
       pkgs.git
       pkgs.nssmdns
       pkgs.man-pages
@@ -32,7 +38,7 @@ in {
       pkgs.git-crypt
     ];
 
-    nix = lib.mkIf isPersonalPC {
+    nix = {
       package = pkgs.nixUnstable;
       extraOptions = ''
         keep-outputs = true
