@@ -12,6 +12,9 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
   };
 
   services.upower.enable = true;
+  hardware.bluetooth.disabledPlugins = [
+    "sap"
+  ];
 
   systemd.services = {
     pd-mapper = {
@@ -33,19 +36,17 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
       };
       wantedBy = ["multi-user.target"];
     };
-    btSetup = {
+    bluetooth = {
       serviceConfig = {
-        ExecStart = pkgs.writeShellScript "setupBluetooth" ''
-          ${pkgs.util-linux}/bin/rfkill block bluetooth
-          ${pkgs.bluez5-experimental}/bin/btmgmt public-addr D4:C2:0D:30:A2:44
-          ${pkgs.util-linux}/bin/rfkill unblock bluetooth
-        '';
-        Type = "oneshot";
-        RemainAfterExit = true;
+        ExecStartPre = [
+          ""
+          "${pkgs.util-linux}/bin/rfkill block bluetooth"
+          "${pkgs.bluez5-experimental}/bin/btmgmt public-addr D4:C2:0D:30:A2:44"
+          "${pkgs.util-linux}/bin/rfkill unblock bluetooth"
+        ];
+        RestartSec=5;
+        Restart="on-failure";
       };
-      before = [
-        "bluetooth.service"
-      ];
     };
   };
 }
