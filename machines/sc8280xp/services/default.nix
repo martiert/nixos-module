@@ -7,6 +7,15 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
         qrtr = prev.callPackage ./qrtr.nix {};
         pd-mapper = prev.callPackage ./pd-mapper.nix {};
         compressFirmwareXz = lib.id; # pd-mapper needs firmware to not be compressed
+        alsa-ucm-conf = prev.alsa-ucm-conf.overrideAttrs (old: {
+          src = pkgs.fetchFromGitHub {
+            owner = "Srinivas-Kandagatla";
+            repo = "alsa-ucm-conf";
+            rev = "39420b066a927833809265d2e448da5a8f8ec125";
+            sha256 = "y1KFR8KAV+i6ZSrQD2Kriwe1jGw502BvEk9TWjSCcbg=";
+          };
+          patches = [ ./unfix-device-numbers.patch ];
+        });
       })
     ];
   };
