@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, libXtst, ... }:
 
 with lib;
 
@@ -9,14 +9,10 @@ let
   jre = pkgs.openjdk.override {
     enableJavaFX = false;
   };
-  # Use jetbrains.jdk for JavaFX support
-  # jre = pkgs.jetbrains.jdk;
-
-  # davmail = pkgs.davmail;
   davmail = pkgs.davmail.override {
-    inherit jre;
+    preferZulu = false;
   };
-
+  java_opts = "-Xmx512M -Dsun.net.inetaddr.ttl=60 -Djdk.gtk.version=3";
 in {
   config = mkIf (martiert.system.type == "desktop") {
     home.packages = [
@@ -70,8 +66,7 @@ in {
       };
 
       Service = {
-        Environment = "PATH=${pkgs.davmail}/bin:${pkgs.coreutils}/bin:${pkgs.xdg-utils}/bin:${pkgs.firefox}/bin";
-        ExecStart = "${davmail}/bin/davmail";
+        ExecStart = "${jre}/bin/java ${java_opts} -cp ${davmail}/share/davmail/davmail.jar davmail.DavGateway";
         Restart = "on-failure";
       };
 
