@@ -16,5 +16,6 @@
     "spotify-unwrapped"
     "zoom"
     "teamviewer"
+    "widevine-cdm"
   ];
 }
