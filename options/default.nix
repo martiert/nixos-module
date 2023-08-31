@@ -39,7 +39,7 @@ with lib;
             description = "Extra kernel module to make available";
           };
           kernelModules = mkOption {
-            type = types.listOf types.string;
+            type = types.listOf types.str;
             default = [ "uas" "usbcore" "usb_storage" "ext4" "nls_cp437" "nls_iso8859_1" ];
             description = "Kernel modules to load as default for initrd";
           };

@@ -14,7 +14,7 @@ with lib;
             useDHCP = mkEnableOption "dhcp for this interface";
             bridgedInterfaces = mkOption {
               default = [];
-              type = types.listOf types.string;
+              type = types.listOf types.str;
               description = "Interfaces to add to the bridge";
             };
             staticRoutes = mkEnableOption "static routes";
