@@ -8,7 +8,7 @@ in mkIf (martiert.system.gpu == "amd") {
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
   systemd.tmpfiles.rules = [
-    "L+ /opt/rocm/hip - - - - ${pkgs.hip}"
+    "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
   ];
   hardware.opengl = {
     extraPackages = [
