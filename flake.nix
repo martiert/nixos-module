@@ -8,6 +8,7 @@
   outputs = { self, nixpkgs, ... }: {
     nixosModules = {
       all = import ./default.nix;
+      minimal = import ./minimal.nix;
       home-manager = import ./home-manager.nix;
       default = self.nixosModules.all;
     };
