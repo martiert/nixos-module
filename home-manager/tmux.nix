@@ -8,7 +8,7 @@ let
         window_name = "1:CE";
         layout = "even-horizontal";
         shell_command_before = [
-          "cd Cisco/main/main"
+          "cd src/Cisco/main/main"
         ];
         panes = [
           "vim"
@@ -33,7 +33,7 @@ let
         window_name = "4:os";
         layout = "even-horizontal";
         shell_command_before = [
-          "cd Cisco/os/os"
+          "cd src/Cisco/os/os"
         ];
         panes = [
           "vim"
@@ -46,7 +46,7 @@ let
         window_name = "5:training";
         layout = "even-horizontal";
         shell_command_before = [
-          "cd Cisco/training"
+          "cd src/Cisco/training"
         ];
         panes = [
           "vim"
