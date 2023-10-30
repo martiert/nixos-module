@@ -33,7 +33,7 @@ let
         window_name = "4:os";
         layout = "even-horizontal";
         shell_command_before = [
-          "cd src/Cisco/os/os"
+          "cd src/Cisco/os/main"
         ];
         panes = [
           "vim"
