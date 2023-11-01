@@ -44,7 +44,7 @@ lib.mkIf (config.martiert.system.type != "server") {
     };
     includes = [
       {
-        condition = "gitdir:~/Cisco/";
+        condition = "gitdir:~/src/Cisco/";
         contents = {
           user = {
             email = "mertsas@cisco.com";
