@@ -128,7 +128,7 @@ in {
 
         auto_view text/plain text/html text/calendar
         unalternative_order text/enriched text/plain text
-        alternative_order text/plain text/calendar text/html text/enriched text
+        alternative_order text/calendar text/plain text/html text/enriched text
         '';
     };
 
