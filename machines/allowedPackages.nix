@@ -17,5 +17,6 @@
     "zoom"
     "teamviewer"
     "widevine-cdm"
+    "citrix-workspace"
   ];
 }
