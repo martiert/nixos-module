@@ -33,8 +33,11 @@ let
       { address = "173.38.0.0";       prefixLength = 16; }
       { address = "20.190.128.0";     prefixLength = 18; }
       { address = "20.190.129.0";     prefixLength = 24; }
+      { address = "34.228.2.146";     prefixLength = 32; }
       { address = "40.126.0.0";       prefixLength = 18; }
       { address = "40.126.1.0";       prefixLength = 24; }
+      { address = "52.86.46.73";      prefixLength = 32; }
+      { address = "54.86.167.119";    prefixLength = 32; }
       { address = "64.101.0.0";       prefixLength = 16; }
       { address = "64.102.0.0";       prefixLength = 16; }
       { address = "64.103.0.0";       prefixLength = 16; }
@@ -43,7 +46,7 @@ let
       { address = "12.19.88.90";      prefixLength = 32;  }
     ];
     ipv6.routes = lib.mkIf value.staticRoutes [
-      { address = "2001:420:464d::";   prefixLength = 48; }
+      { address = "2001:420:464d::";    prefixLength = 48; }
       { address = "2603:1006:2000::";   prefixLength = 48; }
       { address = "2603:1007:200::";    prefixLength = 48; }
       { address = "2603:1016:1400::";   prefixLength = 48; }
