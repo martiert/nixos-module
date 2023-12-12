@@ -21,6 +21,7 @@ let
   ifaceConfig = iface: value: {
     useDHCP = if (builtins.hasAttr "useDHCP" value) then value.useDHCP else false;
     ipv4.routes = lib.mkIf value.staticRoutes [
+      { address = "3.214.5.205";      prefixLength = 32;  }
       { address = "10.0.0.0";         prefixLength = 8;  }
       { address = "148.62.0.0";       prefixLength = 16; }
       { address = "149.96.17.138";    prefixLength = 32; }
@@ -36,8 +37,10 @@ let
       { address = "34.228.2.146";     prefixLength = 32; }
       { address = "40.126.0.0";       prefixLength = 18; }
       { address = "40.126.1.0";       prefixLength = 24; }
+      { address = "44.207.157.89";    prefixLength = 24; }
       { address = "52.86.46.73";      prefixLength = 32; }
       { address = "54.86.167.119";    prefixLength = 32; }
+      { address = "54.86.32.8";       prefixLength = 32; }
       { address = "64.101.0.0";       prefixLength = 16; }
       { address = "64.102.0.0";       prefixLength = 16; }
       { address = "64.103.0.0";       prefixLength = 16; }
