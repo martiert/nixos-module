@@ -21,32 +21,30 @@ let
   ifaceConfig = iface: value: {
     useDHCP = if (builtins.hasAttr "useDHCP" value) then value.useDHCP else false;
     ipv4.routes = lib.mkIf value.staticRoutes [
-      { address = "3.214.5.205";      prefixLength = 32;  }
+      { address = "3.214.5.205";      prefixLength = 32; }
       { address = "10.0.0.0";         prefixLength = 8;  }
+      { address = "12.19.88.0";       prefixLength = 24; }
+      { address = "20.190.0.0";       prefixLength = 16; }
+      { address = "34.228.2.146";     prefixLength = 32; }
+      { address = "40.126.53.0";      prefixLength = 24; }
+      { address = "44.207.157.0";     prefixLength = 24; }
+      { address = "52.86.46.73";      prefixLength = 32; }
+      { address = "54.86.167.119";    prefixLength = 32; }
+      { address = "54.86.32.8";       prefixLength = 32; }
+      { address = "64.100.37.70";     prefixLength = 32; }
+      { address = "64.101.0.0";       prefixLength = 16; }
+      { address = "64.102.0.0";       prefixLength = 16; }
+      { address = "64.103.0.0";       prefixLength = 16; }
+      { address = "72.163.0.0";       prefixLength = 16; }
+      { address = "144.254.0.0";      prefixLength = 16; }
       { address = "148.62.0.0";       prefixLength = 16; }
       { address = "149.96.17.138";    prefixLength = 32; }
-      { address = "144.254.0.0";       prefixLength = 16; }
       { address = "171.68.0.0";       prefixLength = 16; }
       { address = "171.70.0.0";       prefixLength = 16; }
       { address = "171.71.0.0";       prefixLength = 16; }
       { address = "173.36.0.0";       prefixLength = 16; }
       { address = "173.37.0.0";       prefixLength = 16; }
       { address = "173.38.0.0";       prefixLength = 16; }
-      { address = "20.190.128.0";     prefixLength = 18; }
-      { address = "20.190.129.0";     prefixLength = 24; }
-      { address = "34.228.2.146";     prefixLength = 32; }
-      { address = "40.126.0.0";       prefixLength = 18; }
-      { address = "40.126.1.0";       prefixLength = 24; }
-      { address = "44.207.157.89";    prefixLength = 24; }
-      { address = "52.86.46.73";      prefixLength = 32; }
-      { address = "54.86.167.119";    prefixLength = 32; }
-      { address = "54.86.32.8";       prefixLength = 32; }
-      { address = "64.101.0.0";       prefixLength = 16; }
-      { address = "64.102.0.0";       prefixLength = 16; }
-      { address = "64.103.0.0";       prefixLength = 16; }
-      { address = "72.163.0.0";       prefixLength = 16; }
-      { address = "64.100.37.70";     prefixLength = 32; }
-      { address = "12.19.88.90";      prefixLength = 32;  }
     ];
     ipv6.routes = lib.mkIf value.staticRoutes [
       { address = "2001:420:464d::";    prefixLength = 48; }
