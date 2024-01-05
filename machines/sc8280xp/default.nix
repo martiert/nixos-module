@@ -20,9 +20,8 @@ in {
       ];
       loader.grub = {
         extraFiles = {
-          "devicetree.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
+          "sc8280xp-lenovo-thinkpad-x13s.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
         };
-        extraPerEntryConfig = "devicetree ($drive1)//devicetree.dtb";
         extraConfig = ''
           terminal_input console
           terminal_output gfxterm
