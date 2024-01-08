@@ -16,6 +16,11 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
           };
           patches = [ ./unfix-device-numbers.patch ];
         });
+        modemmanager = prev.modemmanager.overrideAttrs (old: {
+          patches = old.patches ++ [
+            ./0001-fcc-unlock-add-link-for-new-T99W175-5G-modem-variant.patch
+          ];
+        });
       })
     ];
   };
