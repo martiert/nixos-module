@@ -8,8 +8,8 @@ let
     src = fetchFromGitHub {
       owner = "ironrobin";
       repo = "x13s-alarm";
-      rev = "efa51c3b519f75b3983aef67855b1561d9828771";
-      sha256 = "sha256-weETbWXz9aL2pDQDKk7fkb1ecQH0qrhUYDs2E5EiJcI=";
+      rev = "4e61f65b6033a20d50f0fbd3642f383c1a3d75a5";
+      hash = "sha256-oKEbfBu40KYSr5w5qsTqeuTkRtPxnj0JWy4mrGCjxRU=";
     };
 
     dontFixup = true;

@@ -11,8 +11,8 @@ lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
           src = pkgs.fetchFromGitHub {
             owner = "Srinivas-Kandagatla";
             repo = "alsa-ucm-conf";
-            rev = "39420b066a927833809265d2e448da5a8f8ec125";
-            sha256 = "y1KFR8KAV+i6ZSrQD2Kriwe1jGw502BvEk9TWjSCcbg=";
+            rev = "e8c3e7792336e9f68aa560db8ad19ba06ba786bb";
+            hash = "sha256-4fIvgHIkTyGApM3uvucFPSYMMGYR5vjHOz6KQ26Kg7A=";
           };
           patches = [ ./unfix-device-numbers.patch ];
         });
