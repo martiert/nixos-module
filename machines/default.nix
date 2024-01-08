@@ -6,7 +6,6 @@
     ./x86_64.nix
     ./amdgpu.nix
     ./nvidia.nix
-    ./wsl.nix
     ./rpi3.nix
     ./sc8280xp
     ./boot.nix
