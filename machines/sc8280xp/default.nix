@@ -13,14 +13,15 @@ in {
     boot = {
       kernelPackages = pkgs.callPackage ./kernel {};
       kernelParams = [
-        "efi=novamap,noruntime"
-        "pd_ignore_unused"
         "clk_ignore_unused"
-        "loglevel=3"
+        "pd_ignore_unused"
+        "arm64.nopauth"
+        "efi=noruntime"
+        "pcie_aspm.policy=powersupersave"
       ];
       loader.grub = {
         extraFiles = {
-          "sc8280xp-lenovo-thinkpad-x13s.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
+          dtbName = "${config.boot.kernelPackages.kernel}/dtbs/qcom/${dtbName}";
         };
         extraConfig = ''
           terminal_input console
