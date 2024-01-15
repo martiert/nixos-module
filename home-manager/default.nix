@@ -34,9 +34,6 @@
       egl-wayland
       pulsemixer
 
-      cura
-      git-crypt
-
       tmate
     ];
   };
