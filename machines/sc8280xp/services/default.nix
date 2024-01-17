@@ -17,8 +17,6 @@ in lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
   nixpkgs = {
     overlays = [
       (final: prev: {
-        qrtr = prev.callPackage ./qrtr.nix {};
-        pd-mapper = prev.callPackage ./pd-mapper.nix {};
         compressFirmwareXz = lib.id; # pd-mapper needs firmware to not be compressed
       })
     ];

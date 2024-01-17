@@ -3,7 +3,6 @@
 let
   martiert = config.martiert;
   dtbName = "sc8280xp-lenovo-thinkpad-x13s.dtb";
-  firmware = pkgs.callPackages ./firmware {};
 in {
   imports = [
     ./services
@@ -34,7 +33,7 @@ in {
       enableAllFirmware = false;
       enableRedistributableFirmware = false;
       firmware = [
-        firmware.linux-firmware-modified
+        pkgs.linux-firmware-x13s
       ];
       bluetooth.enable = true;
     };
