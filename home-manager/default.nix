@@ -29,7 +29,7 @@
 
       #tools
       wget
-      (pkgs.callPackage ./generate_ssh_key {})
+      generate_ssh_key
 
       egl-wayland
       pulsemixer
