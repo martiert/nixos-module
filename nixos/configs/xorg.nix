@@ -4,7 +4,7 @@ with lib;
 
 let
   martiert = config.martiert;
-  guiEnabled = builtins.elem martiert.system.type [ "desktop" "laptop" "wsl" ];
+  guiEnabled = builtins.elem martiert.system.type [ "desktop" "laptop" ];
 in mkIf guiEnabled {
   services.xserver = {
     enable = true;

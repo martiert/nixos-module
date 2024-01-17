@@ -4,7 +4,7 @@ with lib;
 
 let
   martiert = config.martiert;
-  isPersonalPC = builtins.elem martiert.system.type [ "desktop" "laptop" "wsl" ];
+  isPersonalPC = builtins.elem martiert.system.type [ "desktop" "laptop" ];
 in {
   imports = [
     ./xorg.nix

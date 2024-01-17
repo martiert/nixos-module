@@ -7,7 +7,7 @@ with lib;
     martiert = {
       system = {
         type = mkOption {
-          type = types.enum [ "server" "desktop" "laptop" "wsl" ];
+          type = types.enum [ "server" "desktop" "laptop" ];
           description = "What type of system are we building?";
         };
         gpu = mkOption {
