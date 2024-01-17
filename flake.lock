@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "blocklist": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705481155,
+        "narHash": "sha256-8oZNMZ/e4Xoaz7ZQL8uO71M22paCFw0R6IL49H7cBFg=",
+        "owner": "hagezi",
+        "repo": "dns-blocklists",
+        "rev": "5335ff067955080a56fc93e9aab74afc1dcc31a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hagezi",
+        "repo": "dns-blocklists",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -36,6 +52,7 @@
     },
     "root": {
       "inputs": {
+        "blocklist": "blocklist",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }
