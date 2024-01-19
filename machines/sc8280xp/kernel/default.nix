@@ -1,9 +1,9 @@
-{ pkgs, buildLinux, ... }@args:
+{ pkgs, lib, buildLinux, ... }@args:
 
 let
   steev_kernel_pkg = { buildLinux, ... }@args:
    buildLinux (args // rec {
-     version = "6.6.6";
+     version = "6.6.11";
      modDirVersion = version;
      # defconfig = ./defconfig;
      defconfig = "laptop_defconfig";
@@ -11,8 +11,8 @@ let
      src = pkgs.fetchFromGitHub {
        owner = "steev";
        repo = "linux";
-       rev = "e6b171c599e0290dbd40a306c59028d677123577";
-       sha256 = "sha256-ldoahxw3/6/FEeR8OOJy51Um1oT1g5mS6DN3tctY0M8=";
+       rev = "48e40671c262d6b4ed199290d6c8d8631f8f7970";
+       hash = "sha256-vvT92Y7KVhrdqmGOxWoYTixBSMzzgvZ4U81v/Uz2FtI=";
      };
      kernelPatches = [
        {
