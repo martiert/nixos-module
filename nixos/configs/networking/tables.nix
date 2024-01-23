@@ -45,6 +45,7 @@ in {
     wantedBy = [ "multi-user.target" ];
     script = waitForDefaultRoute;
     path = [ pkgs.iproute2 ];
+    requires = [ "network-online.target" ];
 
     serviceConfig = {
       Type = "oneshot";
