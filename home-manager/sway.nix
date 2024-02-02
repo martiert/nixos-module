@@ -11,7 +11,7 @@ in {
       export QT_QPA_PLATFORM=wayland
     '';
     config = {
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+      terminal = "${pkgs.foot}/bin/foot";
       keybindings = lib.mkOptionDefault {
         "${modifier}+0"       = "workspace number 10";
         "${modifier}+Shift+0" = "move container to workspace number 10";
