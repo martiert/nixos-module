@@ -8,8 +8,10 @@ let
 in mkIf guiEnabled {
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbOptions = "caps:none,compose:lwin";
+    xkb = {
+      options = "caps:none,compose:lwin";
+      layout = "us";
+    };
 
     libinput.enable = true;
     displayManager = {
