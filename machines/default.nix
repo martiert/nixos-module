@@ -13,5 +13,6 @@
   nix.settings.trusted-users = [
     "root"
     "martin"
+    "hydra"
   ];
 }
