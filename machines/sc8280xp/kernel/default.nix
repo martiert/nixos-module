@@ -3,15 +3,15 @@
 let
   steev_kernel_pkg = { buildLinux, ... }@args:
    buildLinux (args // rec {
-     version = "6.6.12";
+     version = "6.7.3";
      modDirVersion = version;
      defconfig = "laptop_defconfig";
 
      src = pkgs.fetchFromGitHub {
        owner = "steev";
        repo = "linux";
-       rev = "0d6a5d6312e4ad69b18d699c48ee93a9ba564dfb";
-       hash = "sha256-dyItbyfVmcwJw/i/KYHRMrXbO6JSmQEckxFD66jRBm0=";
+       rev = "51ab952ae1a6f41102af4c7099a1856972317e90";
+       hash = "sha256-PFNEqisBfaJKw95WOa4+f1QC9mB5VsfRSNYINjUFw90=";
      };
 
      kernelPatches = [
@@ -21,6 +21,9 @@ let
          extraConfig = "";
        }
      ];
+     structuredExtraConfig = {
+       VIDEO_AR1337 = lib.kernel.no;
+     };
    } // (args.argsOverride or {}));
   steev_kernel = pkgs.callPackage steev_kernel_pkg {};
 in
