@@ -13,11 +13,11 @@
 stdenv.mkDerivation rec {
   name = "flashPrint";
 
-  version = "5.3.4";
+  version = "5.8.3";
 
   src = fetchurl {
-    url = "https://en.fss.flashforge.com/10000/software/269af4512c7abc085e964644a2b744f3.deb";
-    sha256 = "1a51753a314d702ca525521a1074277dffbd5524d4e9476c3474415da5f30b88";
+    url = "https://en.fss.flashforge.com/10000/software/e02d016281d06012ea71a671d1e1fdb7.deb";
+    hash = "sha256-6vBEthQD0HM2D+l+2dwWmdU+XPJpcvZQM+2GMuaf5Pw=";
   };
 
   nativeBuildInputs = [
