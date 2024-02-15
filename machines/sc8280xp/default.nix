@@ -16,7 +16,6 @@ in {
         "pd_ignore_unused"
         "arm64.nopauth"
         "efi=noruntime"
-        "pcie.aspm.policy=powersupersave"
       ];
       loader.grub = {
         extraFiles = {
