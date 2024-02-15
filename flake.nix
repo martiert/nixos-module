@@ -26,7 +26,7 @@
     };
   in {
     packages = packages;
-    overlays.default = (final: super: {
+    overlays = (final: prev: {
     } // packages);
     hydraJobs = {
       inherit packages;
