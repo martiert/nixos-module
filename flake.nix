@@ -26,10 +26,12 @@
     };
   in {
     packages = packages;
-    overlays = (final: prev: {
-    } // packages);
     hydraJobs = {
       inherit packages;
     };
-  });
+  }) //
+  {
+    overlays.default = final: prev: {
+    } // self.packages."x86_64-linux" // self.packages."aarch64-linux";
+  };
 }
