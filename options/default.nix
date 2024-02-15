@@ -59,11 +59,8 @@ with lib;
                 type = types.str;
                 description = "device to unlock";
               };
-              credentials = mkOption {
-                type = types.listOf (types.str);
-                description = "credentials for luks decryption";
-                default = [];
-              };
+              useFido2Device = mkEnableOption "Use a fido2 device to unlock the disk";
+              useTpm2Device = mkEnableOption "Use a tpm2 to unlock the disk";
             };
           });
         };

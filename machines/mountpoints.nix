@@ -5,13 +5,13 @@ with lib;
 let
   cfg = config.martiert.mountpoints;
 in {
+  boot.initrd.systemd.enable = true;
   boot.initrd.luks = mkIf (cfg.root != null) {
-    fido2Support = true;
     devices."root" = {
-      fido2.credentials = cfg.root.credentials;
       device = cfg.root.encryptedDevice;
-      preLVM = false;
-      fallbackToPassword = true;
+      crypttabExtraOpts = [] ++
+        (optionals cfg.root.useFido2Device [ "fido2-device=auto" ]) ++
+        (optionals cfg.root.useTpm2Device [ "tmp2-device=auto" ]);
     };
   };
   fileSystems."/" = mkIf (cfg.root != null) {
