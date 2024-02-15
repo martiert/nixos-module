@@ -15,7 +15,7 @@ in {
     };
   };
   fileSystems."/" = mkIf (cfg.root != null) {
-    device = cfg.root.device;
+    device = "/dev/mapper/root";
     fsType = "ext4";
   };
   fileSystems."/boot" = mkIf (cfg.boot != null) {

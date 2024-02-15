@@ -59,10 +59,6 @@ with lib;
                 type = types.str;
                 description = "device to unlock";
               };
-              device = mkOption {
-                type = types.str;
-                description = "decrypted device to mount";
-              };
               credentials = mkOption {
                 type = types.listOf (types.str);
                 description = "credentials for luks decryption";
