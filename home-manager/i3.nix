@@ -3,17 +3,18 @@
 with lib;
 
 let
-  cfg = config.martiert.i3;
+  cfg = config.martiert;
   modifier = config.xsession.windowManager.i3.config.modifier;
+  terminal = if (cfg.terminal.default == "alacritty") then "${pkgs.alacritty}/bin/alacritty" else "${pkgs.xterm}/bin/xterm";
 in lib.mkIf (config.martiert.system.type != "server") {
   xsession.windowManager.i3 = {
-    enable = cfg.enable;
+    enable = cfg.i3.enable;
     config = {
       modifier = "Mod1";
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+      terminal = terminal;
       menu = "${pkgs.bemenu}/bin/bemenu-run";
       keybindings = mkOptionDefault {
-        "${modifier}+Shift+l"     = "exec ${cfg.lockCmd}";
+        "${modifier}+Shift+l"     = "exec ${cfg.i3.lockCmd}";
       };
       bars = [
         {
@@ -21,7 +22,7 @@ in lib.mkIf (config.martiert.system.type != "server") {
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs config-bottom.toml";
           fonts = {
             names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
-            size = cfg.barSize;
+            size = cfg.i3.barSize;
           };
         }
       ];
@@ -35,6 +36,6 @@ in lib.mkIf (config.martiert.system.type != "server") {
   services.screen-locker = {
     enable = true;
     inactiveInterval = 10;
-    lockCmd = cfg.lockCmd;
+    lockCmd = cfg.i3.lockCmd;
   };
 }

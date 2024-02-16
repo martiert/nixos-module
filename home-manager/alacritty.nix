@@ -1,15 +1,15 @@
 { lib, config, ... }:
 
 let
-  cfg = config.martiert.alacritty;
+  cfg = config.martiert;
 in lib.mkIf (config.martiert.system.type != "server") {
   programs.alacritty = {
-    enable = true;
+    enable = (cfg.terminal.default == "alacritty");
     settings = {
       window.decorations = "none";
 
       font = {
-        size = cfg.fontSize;
+        size = cfg.terminal.fontSize;
       };
 
       colors = {

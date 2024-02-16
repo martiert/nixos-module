@@ -8,11 +8,18 @@ with lib;
     ./mail.nix
   ];
 
-  options.martiert.alacritty = {
-    fontSize = mkOption {
-      type = types.int;
-      default = 10;
-      description = "Fontsize to use";
+  options.martiert = {
+    terminal = {
+      default = mkOption {
+        type = types.str;
+        default = "alacritty";
+        description = "Default terminal to use";
+      };
+      fontSize = mkOption {
+        type = types.int;
+        default = 10;
+        description = "Fontsize to use";
+      };
     };
   };
 }
