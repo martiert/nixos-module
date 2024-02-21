@@ -17,6 +17,10 @@
       home-manager = import ./home-manager.nix;
       default = self.nixosModules.all;
     };
+    overlays = {
+      default = self.overlays.x86_64-linux;
+    } //
+    flake-utils.lib.eachSystemMap [ "x86_64-linux" "aarch64-linux" ] (system: (final: prev: self.packages."${system}"));
   } //
   flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (system:
   let
@@ -29,9 +33,5 @@
     hydraJobs = {
       inherit packages;
     };
-  }) //
-  {
-    overlays.default = final: prev: {
-    } // self.packages."x86_64-linux" // self.packages."aarch64-linux";
-  };
+  });
 }
