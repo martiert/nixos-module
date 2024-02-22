@@ -17,6 +17,15 @@ in mkIf (builtins.elem martiert.system.type [ "desktop" "laptop" ]) {
         device = mkDefault "nodev";
         efiSupport = mkDefault true;
         efiInstallAsRemovable = mkDefault martiert.boot.efi.removable;
+        extraEntries = ''
+          menuentry 'Firmware Setup' --class settings {
+            fwsetup
+            clear
+            echo ""
+            echo "Your EFI systems does not support this feature"
+            echo ""
+          }
+        '';
       };
     };
     initrd.kernelModules = martiert.boot.initrd.kernelModules;
