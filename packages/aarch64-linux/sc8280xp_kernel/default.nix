@@ -3,15 +3,15 @@
 let
   kernel_pkg = { buildLinux, ... }@args:
    buildLinux (args // rec {
-     version = "6.7.3";
+     version = "6.7.5";
      modDirVersion = version;
      defconfig = "laptop_defconfig";
 
      src = pkgs.fetchFromGitHub {
        owner = "steev";
        repo = "linux";
-       rev = "51ab952ae1a6f41102af4c7099a1856972317e90";
-       hash = "sha256-PFNEqisBfaJKw95WOa4+f1QC9mB5VsfRSNYINjUFw90=";
+       rev = "45411854bb931cb5c989e00ded127d4fc68dfa01";
+       hash = "sha256-2FSsuKEl+KTYmiDtgCbxHS7y8Qz+Y1zkRuRcWWE0iqc=";
      };
 
      kernelPatches = [
