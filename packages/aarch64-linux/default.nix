@@ -7,5 +7,5 @@ rec {
   linux-firmware-x13s = pkgs.callPackage ./x13s-firmware {};
   qrtr = pkgs.callPackage ./qrtr {};
   pd-mapper = pkgs.callPackage ./pd-mapper { inherit qrtr; };
-  sc8280xp_kernel = sc8280xpKernel.kernel;
+  sc8280xp_kernel = pkgs.callPackage ./sc8280xp_kernel {};
 }

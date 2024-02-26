@@ -1,7 +1,7 @@
-{ pkgs, lib, buildLinux, ... }@args:
+{ pkgs, lib, ... }:
 
 let
-  steev_kernel_pkg = { buildLinux, ... }@args:
+  kernel_pkg = { buildLinux, ... }@args:
    buildLinux (args // rec {
      version = "6.7.3";
      modDirVersion = version;
@@ -25,6 +25,5 @@ let
        VIDEO_AR1337 = lib.kernel.no;
      };
    } // (args.argsOverride or {}));
-  steev_kernel = pkgs.callPackage steev_kernel_pkg {};
 in
-  pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor steev_kernel)
+  pkgs.callPackage kernel_pkg {}

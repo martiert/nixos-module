@@ -10,7 +10,7 @@ in {
 
   config = lib.mkIf (martiert.system.aarch64.arch == "sc8280xp") {
     boot = {
-      kernelPackages = pkgs.callPackage ./kernel {};
+      kernelPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor pkgs.sc8280xp_kernel);
       kernelParams = [
         "clk_ignore_unused"
         "pd_ignore_unused"
