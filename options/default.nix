@@ -84,6 +84,7 @@ with lib;
         };
       };
       dnsproxy.enable = mkEnableOption "Proxy dns requests through a local dns server";
+      citrix.enable = mkEnableOption "Enable citrix workspace";
     };
   };
 
