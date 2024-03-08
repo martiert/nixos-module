@@ -37,5 +37,6 @@
 
       tmate
     ];
+    xdg.enable = true;
   };
 }
