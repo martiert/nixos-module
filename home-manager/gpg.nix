@@ -16,7 +16,7 @@ lib.mkIf (config.martiert.system.type != "server") {
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry;
+    pinentryPackage = pkgs.pinentry-tty;
     enableSshSupport = true;
   };
 }
