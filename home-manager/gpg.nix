@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 
 lib.mkIf (config.martiert.system.type != "server") {
   programs.gpg = {
@@ -16,7 +16,7 @@ lib.mkIf (config.martiert.system.type != "server") {
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "tty";
+    pinentryPackage = pkgs.pinentry;
     enableSshSupport = true;
   };
 }
