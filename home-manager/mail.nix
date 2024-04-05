@@ -54,6 +54,7 @@ in {
 
             mailboxes "=Inbox"
             mailboxes "=Inbox/chromium"
+            mailboxes "=oss-security"
             mailboxes "=Inbox/jira"
             mailboxes "=Inbox/Patches"
             mailboxes "=Inbox/github"
