@@ -56,9 +56,11 @@ in {
             "pmic_glink_altmode"
             "gpio_sbu_mux"
             "phy_qcom_qmp_combo"
-            "panel-edp"
-            "msm"
+            "gpucc_sc8280xp"
+            "dispcc_sc8280xp"
             "phy_qcom_edp"
+            "panel_edp"
+            "msm"
           ];
         };
         kernelModules = [];
