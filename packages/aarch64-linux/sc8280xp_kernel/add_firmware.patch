@@ -1,15 +1,14 @@
 diff --git a/drivers/gpu/drm/msm/adreno/adreno_device.c b/drivers/gpu/drm/msm/adreno/adreno_device.c
-index f2d9d34ed50f..e0bfec7be89a 100644
+index 2ce7d7b1690d..8f28a6b474c0 100644
 --- a/drivers/gpu/drm/msm/adreno/adreno_device.c
 +++ b/drivers/gpu/drm/msm/adreno/adreno_device.c
-@@ -520,6 +520,10 @@ MODULE_FIRMWARE("qcom/leia_pfp_470.fw");
+@@ -552,6 +552,9 @@ MODULE_FIRMWARE("qcom/leia_pfp_470.fw");
  MODULE_FIRMWARE("qcom/leia_pm4_470.fw");
  MODULE_FIRMWARE("qcom/yamato_pfp.fw");
  MODULE_FIRMWARE("qcom/yamato_pm4.fw");
 +MODULE_FIRMWARE("qcom/a690_gmu.bin");
 +MODULE_FIRMWARE("qcom/a690_zap.mdt");
 +MODULE_FIRMWARE("qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn");
-+
  
  static const struct adreno_info *adreno_info(uint32_t chip_id)
  {
