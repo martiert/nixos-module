@@ -9,22 +9,7 @@ in {
     ./davmail.nix
   ];
 
-  config = mkIf (martiert.system.type == "desktop") {
-    martiert.email = {
-      address = "mertsas@cisco.com";
-      smtp = {
-        tls = false;
-        host = "outbound.cisco.com";
-      };
-      imap.tls = false;
-      davmail = {
-        o365 = {
-          enable = true;
-          clientId = "953f4ef4-80ac-48d1-b98c-f66f227bb094";
-        };
-      };
-    };
-
+  config = mkIf martiert.email.enable {
     accounts.email = {
       maildirBasePath = ".mail";
       accounts.cisco = {
