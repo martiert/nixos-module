@@ -37,11 +37,5 @@ in stdenvNoCC.mkDerivation rec {
 
     # Video acceleration
     cp ${x13s-alarm-firmware}/qcvss8280.mbn $out/lib/firmware/qcom/sc8280xp/LENOVO/21BX
-
-    # Install bluetooth firmware for X13s
-    cp ${x13s-alarm-firmware}/hpnv21.b8c $out/lib/firmware/qca
-
-    # Install gpu firmware for X13s
-    cp ${x13s-alarm-firmware}/a690_gmu.bin $out/lib/firmware/qcom
   '';
 }
