@@ -1,19 +1,6 @@
 { pkgs, lib, config, ... }:
 
-let
-  alsa-ucm-conf' = pkgs.alsa-ucm-conf.overrideAttrs (old: {
-    src = pkgs.fetchFromGitHub {
-      owner = "Srinivas-Kandagatla";
-      repo = "alsa-ucm-conf";
-      rev = "e8c3e7792336e9f68aa560db8ad19ba06ba786bb";
-      hash = "sha256-4fIvgHIkTyGApM3uvucFPSYMMGYR5vjHOz6KQ26Kg7A=";
-    };
-    patches = [ ./unfix-device-numbers.patch ];
-  });
-  extraEnv = {
-    ALSA_CONFIG_UCM2 = "${alsa-ucm-conf'}/share/alsa/ucm2";
-  };
-in lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
+lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
   nixpkgs = {
     overlays = [
       (final: prev: {
@@ -23,10 +10,6 @@ in lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
   };
 
   hardware.pulseaudio.enable = false;
-
-  environment.variables = extraEnv;
-  systemd.user.services.pipewire.environment = extraEnv;
-  systemd.user.services.wireplumber.environment = extraEnv;
 
   services.upower.enable = true;
   hardware.bluetooth.disabledPlugins = [
