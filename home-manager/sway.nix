@@ -19,6 +19,7 @@ in {
         "${modifier}+Shift+l" = "exec ${lockCmd}";
       };
       startup = [
+        { command = "${pkgs.mako}/bin/mako"; }
         {
           always = true;
           command = "${pkgs.swayidle}/bin/swayidle -w timeout 300 '${pkgs.swaylock}/bin/swaylock -f -c 000000' timeout 600 '${pkgs.sway}/bin/swaymsg \"output * dpms off\"' resume '${pkgs.sway}/bin/swaymsg \"output * dpms on\"' before-sleep '${lockCmd}'";

@@ -16,6 +16,9 @@ in lib.mkIf (config.martiert.system.type != "server") {
       keybindings = mkOptionDefault {
         "${modifier}+Shift+l"     = "exec ${cfg.i3.lockCmd}";
       };
+      startup = [
+        { command = "${pkgs.dunst}/bin/dunst"; }
+      ];
       bars = [
         {
           trayOutput = "*";
