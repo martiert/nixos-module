@@ -14,11 +14,11 @@ in mkIf guiEnabled {
         layout = "us";
       };
 
-      libinput.enable = true;
 
       windowManager.i3.enable = true;
       wacom.enable = true;
     };
+    libinput.enable = true;
     displayManager = {
       sddm = {
         enable = true;
