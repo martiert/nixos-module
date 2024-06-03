@@ -5,7 +5,7 @@ let
    buildLinux (args // rec {
      version = "6.9.2";
      modDirVersion = version;
-     defconfig = "johan_defconfig";
+     defconfig = "defconfig";
 
      src = pkgs.fetchFromGitHub {
        owner = "steev";
