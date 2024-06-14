@@ -47,7 +47,9 @@ in {
           kernelModules = [
             "nvme"
             "phy_qcom_qmp_pcie"
+            "phy_qcom_qmp_usb"
             "pcie_qcom"
+            "hid_multitouch"
             "i2c_hid_of"
             "i2c_qcom_geni"
             "leds_qcom_lpg"
