@@ -10,12 +10,11 @@ in mkIf (martiert.system.gpu == "amd") {
   systemd.tmpfiles.rules = [
     "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
   ];
-  hardware.opengl = {
+  hardware.graphics = {
     extraPackages = [
       pkgs.rocm-opencl-icd
       pkgs.rocm-opencl-runtime
     ];
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }

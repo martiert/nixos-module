@@ -13,8 +13,6 @@ in mkIf guiEnabled {
         options = "caps:none,compose:lwin";
         layout = "us";
       };
-
-
       windowManager.i3.enable = true;
       wacom.enable = true;
     };
@@ -29,7 +27,7 @@ in mkIf guiEnabled {
   };
 
   programs.sway.enable = true;
-  hardware.opengl = mkIf (pkgs.system == "x86_64-linux") {
-    driSupport32Bit = true;
+  hardware.graphics = mkIf (pkgs.system == "x86_64-linux") {
+    enable32Bit = true;
   };
 }
