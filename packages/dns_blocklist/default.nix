@@ -10,6 +10,6 @@ stdenv.mkDerivation {
   buildPhase = "";
   installPhase = ''
     mkdir $out
-    cp unbound/* $out/
+    cp rpz/* $out/
   '';
 }
