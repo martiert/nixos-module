@@ -23,6 +23,7 @@ with lib;
           };
         };
       };
+      services.duo.enable = lib.mkEnableOption "Enable Duo Desktop Client";
       hardware.nvidia = {
         openDriver = lib.mkEnableOption "Enable using the open nvidia driver";
       };
