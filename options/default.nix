@@ -17,7 +17,7 @@ with lib;
         };
         aarch64 = {
           arch = mkOption {
-            type = types.nullOr (types.enum [ "rpi3" "sc8280xp" ]);
+            type = types.nullOr (types.enum [ "rpi3" "rpi5" "sc8280xp" ]);
             default = null;
             description = "AArch64 architecture";
           };
