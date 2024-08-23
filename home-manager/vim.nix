@@ -1,17 +1,9 @@
 { pkgs, lib, config, ...}:
 
 lib.mkIf (config.martiert.system.type != "server") {
-  programs.neovim = {
+  programs.vim = {
     enable = true;
-
-    vimAlias = true;
-    vimdiffAlias = true;
-
-    withRuby = false;
-
-    coc = {
-      enable = true;
-    };
+    defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
       ctrlp
@@ -19,24 +11,26 @@ lib.mkIf (config.martiert.system.type != "server") {
       cpsm
       rainbow
 
-      LanguageClient-neovim
-
       coc-tsserver
       coc-pyright
       vim-nix
     ];
 
+    settings = {
+      expandtab = true;
+      shiftwidth = 4;
+      tabstop = 4;
+      backupdir = ["~/.vim/backupdir"];
+    };
+
     extraConfig = ''
       colorscheme desert
 
       set nocompatible
-      set expandtab
       set list
       set listchars=tab:>-
       set number
-      set shiftwidth=4
       set softtabstop=4
-      set tabstop=4
   
       au BufNewFile,BufRead genmake.def     set syntax=python
       au BufNewFile,BufRead genmake.def     setfiletype python
