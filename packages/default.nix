@@ -1,6 +1,7 @@
 { pkgs, stdenv, blocklist, deploy-rs, ... }:
 
 {
+  iamb = pkgs.callPackage ./iamb {};
   generate_ssh_key = pkgs.callPackage ./generate_ssh_key {};
   mutt-ics = pkgs.callPackage ./mutt-ics {};
   dns_blocklist = pkgs.callPackage ./dns_blocklist { inherit blocklist; };
