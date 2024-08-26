@@ -11,6 +11,8 @@ lib.mkIf (config.martiert.system.type != "server") {
       cpsm
       rainbow
 
+      LanguageClient-neovim
+
       coc-tsserver
       coc-pyright
       vim-nix
