@@ -59,6 +59,8 @@ lib.mkIf (config.martiert.system.type != "server") {
         \ 'c': ['${pkgs.ccls}/bin/ccls'],
         \ 'python': ['pylsp'],
         \ 'js': ['javascript-typescript-langserver', '--strict'],
+        \ 'java': ['${pkgs.java-language-server}/bin/java-language-server'],
+        \ 'kotlin': ['${pkgs.kotlin-language-server}/bin/kotlin-language-server'],
         \ }
       nmap <silent> gd <Plug>(lcn-definition)
       nmap <silent> gr <Plug>(lcn-references)
