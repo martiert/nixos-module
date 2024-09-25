@@ -6,6 +6,7 @@ with lib;
   imports = [
     ./i3status.nix
     ./mail.nix
+    ./sshconfig.nix
   ];
 
   options.martiert = {

@@ -16,6 +16,7 @@
     ./direnv.nix
     ./weechat.nix
     ./x86_64-linux.nix
+    ./ssh.nix
   ];
 
   config = lib.mkIf (config.martiert.system.type != "server") {
