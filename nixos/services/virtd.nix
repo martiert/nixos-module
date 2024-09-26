@@ -20,12 +20,17 @@ in lib.mkIf martiert.virtd.enable {
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
+      vhostUserPackages = [ pkgs.virtiofsd ];
       ovmf = {
         enable = true;
         packages = [ pkgs.OVMFFull.fd ];
       };
     };
   };
+
+  environment.systemPackages = [
+    pkgs.virt-manager
+  ];
 
   environment.etc.OVMF.source = SecureOVMF;
   boot.kernelParams = [ "intel_iommu=on" ];
