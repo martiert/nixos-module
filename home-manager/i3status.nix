@@ -42,6 +42,7 @@ let
         block = "disk_space";
         format = "$icon ${name} $percentage";
         icons_format = " ";
+        info_type = "free";
         path = path;
         alert_unit = "GB";
         warning = 10;
