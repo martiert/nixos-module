@@ -1,15 +1,14 @@
-diff --git a/drivers/gpu/drm/msm/adreno/adreno_device.c b/drivers/gpu/drm/msm/adreno/adreno_device.c
-index f2d9d34ed50f..e0bfec7be89a 100644
---- a/drivers/gpu/drm/msm/adreno/adreno_device.c
-+++ b/drivers/gpu/drm/msm/adreno/adreno_device.c
-@@ -520,6 +520,10 @@ MODULE_FIRMWARE("qcom/leia_pfp_470.fw");
- MODULE_FIRMWARE("qcom/leia_pm4_470.fw");
- MODULE_FIRMWARE("qcom/yamato_pfp.fw");
- MODULE_FIRMWARE("qcom/yamato_pm4.fw");
+diff --git a/drivers/gpu/drm/msm/adreno/a6xx_catalog.c b/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
+index d9d4a3e821f7..5d444f6dda9a 100644
+--- a/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
++++ b/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
+@@ -1022,6 +1022,9 @@ MODULE_FIRMWARE("qcom/a650_gmu.bin");
+ MODULE_FIRMWARE("qcom/a650_sqe.fw");
+ MODULE_FIRMWARE("qcom/a660_gmu.bin");
+ MODULE_FIRMWARE("qcom/a660_sqe.fw");
 +MODULE_FIRMWARE("qcom/a690_gmu.bin");
 +MODULE_FIRMWARE("qcom/a690_zap.mdt");
 +MODULE_FIRMWARE("qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn");
-+
  
- static const struct adreno_info *adreno_info(uint32_t chip_id)
- {
+ static const struct adreno_reglist a702_hwcg[] = {
+ 	{ REG_A6XX_RBBM_CLOCK_CNTL_SP0, 0x22222222 },
