@@ -6,6 +6,7 @@
     "google-chrome"
     "skypeforlinux"
     "steam"
+    "steam-unwrapped"
     "steam-original"
     "steam-runtime"
     "webex"
