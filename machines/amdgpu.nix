@@ -12,8 +12,7 @@ in mkIf (martiert.system.gpu == "amd") {
   ];
   hardware.graphics = {
     extraPackages = [
-      pkgs.rocm-opencl-icd
-      pkgs.rocm-opencl-runtime
+      pkgs.rocmPackages.clr
     ];
     enable32Bit = true;
   };
