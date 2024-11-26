@@ -1,9 +1,13 @@
 { pkgs, lib, config, ...}:
 
-lib.mkIf (config.martiert.system.type != "server") {
-  programs.vim = {
+let
+  copilot_lua = pkgs.callPackage ./copilot.lua {};
+in lib.mkIf (config.martiert.system.type != "server") {
+  programs.neovim = {
     enable = true;
+    vimAlias = true;
     defaultEditor = true;
+    withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
       ctrlp
@@ -16,14 +20,8 @@ lib.mkIf (config.martiert.system.type != "server") {
       coc-tsserver
       coc-pyright
       vim-nix
+      copilot_lua
     ];
-
-    settings = {
-      expandtab = true;
-      shiftwidth = 4;
-      tabstop = 4;
-      backupdir = ["~/.vim/backupdir"];
-    };
 
     extraConfig = ''
       colorscheme desert
@@ -32,7 +30,10 @@ lib.mkIf (config.martiert.system.type != "server") {
       set list
       set listchars=tab:>-
       set number
+      set expandtab
       set softtabstop=4
+      set shiftwidth=4
+      set tabstop=4
   
       au BufNewFile,BufRead genmake.def     set syntax=python
       au BufNewFile,BufRead genmake.def     setfiletype python
@@ -67,6 +68,29 @@ lib.mkIf (config.martiert.system.type != "server") {
       nmap <silent> gi <Plug>(lcn-implementation)
       nmap <silent> gmv <Plug>(lcn-rename)
       nmap <silent>K <Plug>(lcn-hover)
+    '';
+    extraLuaConfig = ''
+      require("copilot").setup({
+        panel = {
+          auto_refresh = true,
+          enabled = true,
+          layout = {
+            position = "left"
+          }
+        },
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept_word = "<C-Right>",
+            deny_word = "<C-End>"
+          }
+        },
+        filetype = {
+          markdown = true,
+          gitcommit = true
+        },
+        copilot_node_command = "${pkgs.nodejs}/bin/node",
+      })
     '';
   };
 }

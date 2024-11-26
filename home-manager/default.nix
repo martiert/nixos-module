@@ -20,10 +20,6 @@
   ];
 
   config = lib.mkIf (config.martiert.system.type != "server") {
-    home.sessionVariables = {
-      EDITOR = "vim";
-    };
-
     home.packages = with pkgs; [
       silver-searcher
       firefox
