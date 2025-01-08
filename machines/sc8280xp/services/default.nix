@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 lib.mkIf (config.martiert.system.aarch64.arch == "sc8280xp") {
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   services.upower.enable = true;
   hardware.bluetooth.disabledPlugins = [
