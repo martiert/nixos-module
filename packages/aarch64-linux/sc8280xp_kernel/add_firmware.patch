@@ -1,8 +1,8 @@
 diff --git a/drivers/gpu/drm/msm/adreno/a6xx_catalog.c b/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
-index d9d4a3e821f7..5d444f6dda9a 100644
+index 0c560e84ad5a..247ef6f5a7a1 100644
 --- a/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
 +++ b/drivers/gpu/drm/msm/adreno/a6xx_catalog.c
-@@ -1022,6 +1022,9 @@ MODULE_FIRMWARE("qcom/a650_gmu.bin");
+@@ -1071,6 +1071,9 @@ MODULE_FIRMWARE("qcom/a650_gmu.bin");
  MODULE_FIRMWARE("qcom/a650_sqe.fw");
  MODULE_FIRMWARE("qcom/a660_gmu.bin");
  MODULE_FIRMWARE("qcom/a660_sqe.fw");
