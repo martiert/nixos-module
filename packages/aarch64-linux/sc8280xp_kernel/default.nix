@@ -21,9 +21,6 @@ let
          extraConfig = "";
        }
      ];
-     structuredExtraConfig = {
-       VIDEO_AR1337 = lib.kernel.no;
-     };
    } // (args.argsOverride or {}));
 in
   pkgs.callPackage kernel_pkg {}
