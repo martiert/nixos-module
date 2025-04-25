@@ -10,7 +10,6 @@ in {
 
   config = lib.mkIf (martiert.system.aarch64.arch == "sc8280xp") {
     boot = {
-      kernelPackages = pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor pkgs.sc8280xp_kernel);
       kernelParams = [
         "clk_ignore_unused"
         "pd_ignore_unused"
@@ -45,7 +44,6 @@ in {
             "nvme"
             "phy_qcom_qmp_pcie"
             "phy_qcom_qmp_usb"
-            "pcie_qcom"
             "hid_multitouch"
             "i2c_hid_of"
             "i2c_qcom_geni"
