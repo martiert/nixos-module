@@ -30,4 +30,5 @@ in mkIf guiEnabled {
   hardware.graphics = mkIf (pkgs.system == "x86_64-linux") {
     enable32Bit = true;
   };
+  programs.i3lock.enable = true;
 }
