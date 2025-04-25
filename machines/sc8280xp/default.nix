@@ -25,11 +25,17 @@ in {
           terminal_output gfxterm
         '';
       };
+      initrd.extraFirmwarePaths = [
+        "qcom/a660_sqe.fw"
+        "qcom/a660_gmu.bin"
+        "qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn"
+        "qcom/sc8280xp/LENOVO/21BX/qccdsp8280.mbn"
+        "qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn"
+      ];
     };
     hardware = {
       deviceTree.enable = true;
-      enableAllFirmware = false;
-      enableRedistributableFirmware = false;
+      enableRedistributableFirmware = true;
       bluetooth.enable = true;
     };
 
