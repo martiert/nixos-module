@@ -31,9 +31,6 @@ in {
       deviceTree.enable = true;
       enableAllFirmware = false;
       enableRedistributableFirmware = false;
-      firmware = [
-        pkgs.linux-firmware-x13s
-      ];
       bluetooth.enable = true;
     };
 
