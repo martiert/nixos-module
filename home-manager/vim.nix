@@ -15,7 +15,7 @@ in lib.mkIf (config.martiert.system.type != "server") {
       cpsm
       rainbow
 
-      LanguageClient-neovim
+      # LanguageClient-neovim
 
       coc-tsserver
       coc-pyright
