@@ -7,6 +7,7 @@
 python3Packages.buildPythonApplication rec {
   pname = "mutt-ics";
   version = "0.9.2";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "dmedvinsky";
@@ -20,6 +21,8 @@ python3Packages.buildPythonApplication rec {
     python3Packages.icalendar
     python3Packages.python-dateutil
   ];
+
+  build-system = [ python3Packages.setuptools ];
 
   meta = with lib; {
     description = "Mutt-ics";
