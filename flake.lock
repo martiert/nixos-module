@@ -3,11 +3,11 @@
     "blocklist": {
       "flake": false,
       "locked": {
-        "lastModified": 1753719287,
-        "narHash": "sha256-XYMkzhvnuLpgSXZE4aCA2HoHztMLQvELfOce/HxA6H8=",
+        "lastModified": 1753805744,
+        "narHash": "sha256-dGTaieywlCu8HshW+heiatJtOV4mbFIbsWIqkHm4xI8=",
         "owner": "hagezi",
         "repo": "dns-blocklists",
-        "rev": "4132365f20b43cce97fb5363d50dd261b269c8c1",
+        "rev": "dfd083eecea28fd793cc0b6051f96bd9a827fcd4",
         "type": "github"
       },
       "original": {
@@ -88,11 +88,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1753549186,
-        "narHash": "sha256-Znl7rzuxKg/Mdm6AhimcKynM7V3YeNDIcLjBuoBcmNs=",
+        "lastModified": 1753694789,
+        "narHash": "sha256-cKgvtz6fKuK1Xr5LQW/zOUiAC0oSQoA9nOISB0pJZqM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "17f6bd177404d6d43017595c5264756764444ab8",
+        "rev": "dc9637876d0dcc8c9e5e22986b857632effeb727",
         "type": "github"
       },
       "original": {
