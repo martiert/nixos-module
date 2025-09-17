@@ -3,11 +3,11 @@
     "blocklist": {
       "flake": false,
       "locked": {
-        "lastModified": 1758010388,
-        "narHash": "sha256-/nGQsp3109ZbS1+qzZ3QITYbcY4hrdIdloi5yIzEicw=",
+        "lastModified": 1758096485,
+        "narHash": "sha256-v6qZPc6o1IzTUnZNzbpThK8Au8GKkoP7UcJSXpeo1Bs=",
         "owner": "hagezi",
         "repo": "dns-blocklists",
-        "rev": "881a29609827e06821be61426d42671defe6b822",
+        "rev": "fc7bc70233f7136b5e3bacc9fe19d8b190fc2baf",
         "type": "github"
       },
       "original": {
