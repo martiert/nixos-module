@@ -6,12 +6,8 @@ let
   martiert = config.martiert;
 
   # Disable JavaFX to use the simple pop-up
-  jre = pkgs.openjdk.override {
-    enableJavaFX = false;
-  };
-  davmail = pkgs.davmail.override {
-    preferZulu = false;
-  };
+  jre = pkgs.openjdk;
+  davmail = pkgs.davmail;
   java_opts = "-Xmx512M -Dsun.net.inetaddr.ttl=60 -Djdk.gtk.version=3";
 in {
   config = mkIf (martiert.system.type == "desktop") {
