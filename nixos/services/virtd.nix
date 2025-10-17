@@ -21,10 +21,6 @@ in lib.mkIf martiert.virtd.enable {
       runAsRoot = true;
       swtpm.enable = true;
       vhostUserPackages = [ pkgs.virtiofsd ];
-      ovmf = {
-        enable = true;
-        packages = [ pkgs.OVMFFull.fd ];
-      };
     };
   };
 
