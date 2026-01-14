@@ -53,7 +53,9 @@ in mkIf (pkgs.system == "x86_64-linux" && builtins.elem martiert.system.type [ "
 
   services.udev.packages = [ pkgs.projecteur ];
 
-  programs.adb.enable = true;
+  environment.systemPackages = [
+    pkgs.android-tools
+  ];
   networking.firewall.allowedTCPPortRanges = [
     {
       from = 20000;
