@@ -8,7 +8,7 @@ let
 in mkIf guiEnabled {
   services = {
     xserver = {
-      enable = true;
+      enable = !martiert.services.waylandOnly;
       xkb = {
         options = "caps:none,compose:lwin";
         layout = "us";
@@ -19,6 +19,7 @@ in mkIf guiEnabled {
     libinput.enable = true;
     displayManager = {
       sddm = {
+        wayland.enable = true;
         enable = true;
         enableHidpi = builtins.elem martiert.system.type [ "desktop" "laptop" ];
       };
