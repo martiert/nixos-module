@@ -17,7 +17,6 @@ in lib.mkIf (config.martiert.system.type != "server") {
 
       # LanguageClient-neovim
 
-      coc-tsserver
       coc-pyright
       vim-nix
       copilot_lua
