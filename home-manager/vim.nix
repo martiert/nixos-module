@@ -10,8 +10,8 @@ in lib.mkIf (config.martiert.system.type != "server") {
     withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
-      ctrlp
-      fugitive
+      ctrlp-vim
+      vim-fugitive
       cpsm
       rainbow
 
