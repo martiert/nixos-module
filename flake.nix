@@ -8,10 +8,9 @@
       url = "github:hagezi/dns-blocklists";
       flake = false;
     };
-    deploy-rs.url = "github:serokell/deploy-rs";
   };
 
-  outputs = { self, nixpkgs, flake-utils, blocklist, deploy-rs, ... }: {
+  outputs = { self, nixpkgs, flake-utils, blocklist, ... }: {
     nixosModules = {
       all = import ./default.nix;
       minimal = import ./minimal.nix;
@@ -27,7 +26,7 @@
   let
     pkgs = import nixpkgs { inherit system; };
     packages = pkgs.callPackages ./packages {
-      inherit blocklist deploy-rs;
+      inherit blocklist;
     };
   in {
     packages = packages;

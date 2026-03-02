@@ -1,4 +1,4 @@
-{ pkgs, stdenv, blocklist, deploy-rs, ... }:
+{ pkgs, stdenv, blocklist, ... }:
 
 {
   iamb = pkgs.callPackage ./iamb {};
@@ -8,5 +8,4 @@
   tmuxp = pkgs.callPackage ./tmuxp {};
 
   flashPrint = pkgs.libsForQt5.callPackage ./flashPrint {}; 
-  deploy-rs = deploy-rs.packages."${stdenv.hostPlatform.system}".default;
 } // (pkgs.callPackages ./${stdenv.hostPlatform.system} {})
