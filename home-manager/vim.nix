@@ -68,7 +68,7 @@ in lib.mkIf (config.martiert.system.type != "server") {
       nmap <silent> gmv <Plug>(lcn-rename)
       nmap <silent>K <Plug>(lcn-hover)
     '';
-    extraLuaConfig = ''
+    initLua = ''
       require("copilot").setup({
         panel = {
           auto_refresh = true,
