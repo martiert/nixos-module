@@ -31,7 +31,7 @@ in {
           enable = true;
           extraConfig = ''
             set smtp_url = smtp://${martiert.email.smtp.host}
-            set folder = /home/martin/.mail/cisco
+            set folder = $HOME/.mail/cisco
             set spoolfile = +Inbox
             set record = +Sent
             set postponed = +Drafts
@@ -39,7 +39,7 @@ in {
 
             mailboxes "=Inbox"
             mailboxes "=Inbox/chromium"
-            mailboxes "=oss-security"
+            mailboxes "=Inbox/oss-security"
             mailboxes "=Inbox/jira"
             mailboxes "=Inbox/Patches"
             mailboxes "=Inbox/github"
