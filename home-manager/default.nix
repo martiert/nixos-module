@@ -21,7 +21,7 @@
 
   config = lib.mkIf (config.martiert.system.type != "server") {
     home.packages = with pkgs; [
-      silver-searcher
+      ripgrep
       firefox
       gimp
 
