@@ -6,5 +6,5 @@
   mutt-ics = pkgs.callPackage ./mutt-ics {};
   dns_blocklist = pkgs.callPackage ./dns_blocklist { inherit blocklist; };
 
-  flashPrint = pkgs.libsForQt5.callPackage ./flashPrint {}; 
+  flashPrint = pkgs.qt5.callPackage ./flashPrint {}; 
 } // (pkgs.callPackages ./${stdenv.hostPlatform.system} {})
