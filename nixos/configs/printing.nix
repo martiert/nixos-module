@@ -6,6 +6,6 @@ let
 in {
   services.printing = {
     enable = printing;
-    drivers = [ pkgs.cnijfilter2 ];
+    # drivers = [ pkgs.cnijfilter2 ];
   };
 }
