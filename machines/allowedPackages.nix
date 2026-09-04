@@ -9,6 +9,8 @@
     "steam-unwrapped"
     "steam-original"
     "steam-runtime"
+    "codex"
+    "claude-code"
     "webex"
     "nvidia-x11"
     "nvidia-settings"
