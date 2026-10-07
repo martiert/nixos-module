@@ -31,8 +31,6 @@
 
       egl-wayland
       pulsemixer
-
-      tmate
     ];
     xdg.enable = true;
   };
