@@ -120,7 +120,7 @@ in {
 
     home.file.".mailcap".text = ''
       text/calendar; ${pkgs.mutt-ics}/bin/mutt-ics %s; copiousoutput
-      text/html; ${pkgs.links2}/bin/links -dump %s; copiousoutput
+      text/html; ${pkgs.w3m-nographics}/bin/w3m -dump -T text/html %s; copiousoutput
     '';
 
     services.mbsync = {
