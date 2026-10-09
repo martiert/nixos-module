@@ -4,7 +4,7 @@ with lib;
 
 let
   martiert = config.martiert;
-in mkIf (pkgs.system == "x86_64-linux" && builtins.elem martiert.system.type [ "desktop" "laptop" ]) {
+in mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux" && builtins.elem martiert.system.type [ "desktop" "laptop" ]) {
   boot.initrd.availableKernelModules = [
     "vfat"
     "xhci_pci"

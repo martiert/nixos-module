@@ -28,7 +28,7 @@ in mkIf guiEnabled {
   };
 
   programs.sway.enable = true;
-  hardware.graphics = mkIf (pkgs.system == "x86_64-linux") {
+  hardware.graphics = mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux") {
     enable32Bit = true;
   };
   programs.i3lock.enable = true;

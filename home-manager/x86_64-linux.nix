@@ -1,6 +1,6 @@
 { pkgs, lib, config, ...}:
 
-lib.mkIf (pkgs.system == "x86_64-linux" && config.martiert.system.type != "server") {
+lib.mkIf (pkgs.stdenv.hostPlatform.system == "x86_64-linux" && config.martiert.system.type != "server") {
   home.packages = with pkgs; [
     google-chrome
 

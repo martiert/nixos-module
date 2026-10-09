@@ -2,7 +2,7 @@
 
 let
   martiert = config.martiert;
-  printing = martiert.system.type != "server" && pkgs.system == "x86_64-linux";
+  printing = martiert.system.type != "server" && pkgs.stdenv.hostPlatform.system == "x86_64-linux";
 in {
   services.printing = {
     enable = printing;
