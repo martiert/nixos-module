@@ -15,7 +15,7 @@ in {
       davmail
     ];
 
-    home.file.".davmail.properties".text = ''
+    home.file."${config.xdg.configHome}/davmail/davmail.properties".text = ''
       davmail.server=true
       davmail.allowRemote=false
       davmail.disableUpdateCheck=true
@@ -52,6 +52,7 @@ in {
         davmail.oauth.persistToken=true
         davmail.imapPort=${toString martiert.email.davmail.imapPort}
         davmail.caldavPort=${toString martiert.email.davmail.caldavPort}
+        davmail.oauth.tokenFilePath=${config.xdg.configHome}/davmail/oauth-tokens.properties
       '');
 
     systemd.user.services.davmail = {
@@ -62,7 +63,7 @@ in {
       };
 
       Service = {
-        ExecStart = "${jre}/bin/java ${java_opts} -cp ${davmail}/share/davmail/davmail.jar davmail.DavGateway";
+        ExecStart = "${jre}/bin/java ${java_opts} -cp ${davmail}/share/davmail/davmail.jar davmail.DavGateway ${config.xdg.configHome}/davmail/davmail.properties";
         Restart = "on-failure";
       };
 
